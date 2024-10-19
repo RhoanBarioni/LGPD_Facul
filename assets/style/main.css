@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", "Arial";
+}
+
+.btn-pattern {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 100px;
+  height: 100%;
+}
+.btn-pattern a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 48px;
+  background-color: #2a58f0;
+  color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.btn-pattern a:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4588235294));
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1150px;
+  height: 75%;
+}
+header nav .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header nav .logo img {
+  max-width: 180px;
+}
+header nav .options {
+  width: 25%;
+  max-width: 250px;
+  text-transform: capitalize;
+}
+header nav .options ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */

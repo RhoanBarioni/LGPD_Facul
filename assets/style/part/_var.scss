@@ -1,0 +1,17 @@
+// MAIN
+$main_font: 'Poppins';
+$max_width: 1150px;
+
+@mixin container($direction,$justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// HEADER
+$btn_bg_color: #2a58f0;
+
+// BODY
+
+// FOOTER
