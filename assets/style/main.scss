@@ -10,12 +10,16 @@
     font-family: $main_font, 'Arial';
 }
 
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
 // PATTERN
 .btn-pattern{
     @include container(column, center, center);
     text-align: center;
     width: 100%;
-    max-width: 100px;
     height: 100%;
 
     a{

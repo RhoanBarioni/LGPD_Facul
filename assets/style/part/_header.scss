@@ -27,5 +27,9 @@ header{
                 @include container(row, space-between, center);
             }
         }
+
+        .btn-download{
+            max-width: 100px;
+        }
     }
 }
