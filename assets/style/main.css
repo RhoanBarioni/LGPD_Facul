@@ -7,9 +7,28 @@
   font-family: "Poppins", "Arial";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2a58f0;
+  border-radius: 10px;
+}
+
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .btn-pattern {
@@ -63,7 +82,7 @@ header nav .logo {
   align-items: center;
 }
 header nav .logo img {
-  max-width: 180px;
+  max-width: 125px;
 }
 header nav .options {
   width: 25%;
