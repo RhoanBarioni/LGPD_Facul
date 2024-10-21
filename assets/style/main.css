@@ -99,8 +99,8 @@ header nav .nav_container .logo img:last-of-type {
   display: none;
 }
 header nav .nav_container .options {
-  width: 25%;
-  max-width: 250px;
+  width: 50%;
+  max-width: 400px;
   text-transform: capitalize;
 }
 header nav .nav_container .options ul {
