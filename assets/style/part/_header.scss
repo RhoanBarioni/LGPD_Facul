@@ -26,6 +26,9 @@ header{
                 width: 100%;
                 @include container(row, space-between, center);
             }
+            li{
+                width: 100%;
+            }
         }
 
         .btn-download{
