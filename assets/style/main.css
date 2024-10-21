@@ -65,41 +65,82 @@ header {
   align-items: center;
   width: 100vw;
   height: 10vh;
+  background-color: #fff;
 }
 header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  max-height: 98px;
+  background-color: inherit;
+}
+header nav .nav_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1150px;
-  height: 75%;
+  height: 100%;
 }
-header nav .logo {
+header nav .nav_container .logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-header nav .logo img {
+header nav .nav_container .logo img {
   max-width: 125px;
 }
-header nav .options {
+header nav .nav_container .logo img:last-of-type {
+  display: none;
+}
+header nav .nav_container .options {
   width: 25%;
   max-width: 250px;
   text-transform: capitalize;
 }
-header nav .options ul {
+header nav .nav_container .options ul {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-header nav .btn-download {
+header nav .nav_container .btn-download {
   max-width: 100px;
 }
 
+.fixed {
+  position: fixed;
+  animation: fixedA 0.5s ease;
+  z-index: 1;
+  background-color: #fff;
+  text-decoration: none;
+  color: inherit;
+}
+.fixed .logo img:first-of-type {
+  display: none;
+}
+.fixed .logo img:last-of-type {
+  display: block !important;
+}
+
+@keyframes fixedA {
+  0% {
+    text-decoration: none;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    text-decoration: none;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 main {
   display: flex;
   flex-direction: column;
@@ -107,6 +148,7 @@ main {
   align-items: center;
   width: 100%;
   height: 90%;
+  background-color: #fff;
 }
 
 section.banner {

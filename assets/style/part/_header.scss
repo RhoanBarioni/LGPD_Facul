@@ -2,34 +2,80 @@ header{
     @include container(row, center, center);
     width: 100vw;
     height: 10vh;
+    background-color: $bg_color;
 
     nav{
-        @include container(row, space-between, center);
-        width: 100%;
-        max-width: $max_width;
-        height: 75%;
+        @include container(row, center, center);
+        width: 100vw;
+        height: 100%;
+        max-height: 98px;
+        background-color: inherit;
 
-        .logo{
-            @include container(column, center, center);
+        .nav_container{
+            @include container(row, space-between, center);
+            width: 100%;
+            max-width: $max_width;
+            height: 100%;
+    
+            .logo{
+                @include container(column, center, center);
+    
+                img{
+                    max-width: 125px;
+                }
 
-            img{
-                max-width: 125px;
+                img:last-of-type{
+                    display: none;
+                }
+            }
+    
+            .options{
+                width: 25%;
+                max-width: 250px;
+                text-transform: capitalize;
+    
+                ul{
+                    width: 100%;
+                    @include container(row, space-between, center);
+                }
+            }
+    
+            .btn-download{
+                max-width: 100px;
             }
         }
+    }
+}
 
-        .options{
-            width: 25%;
-            max-width: 250px;
-            text-transform: capitalize;
+// CLASS FOR JS
+.fixed{
+    position: fixed;
+    animation: fixedA 0.5s ease;
+    z-index: 1;
+    background-color: $bg_color;
+    text-decoration: none;
+    color: inherit;
 
-            ul{
-                width: 100%;
-                @include container(row, space-between, center);
-            }
+    .logo{
+        img:first-of-type{
+            display: none;
         }
 
-        .btn-download{
-            max-width: 100px;
+        img:last-of-type{
+            display: block !important;
         }
+    }
+}
+
+@keyframes fixedA {
+    0%{
+        text-decoration: none;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        text-decoration: none;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
