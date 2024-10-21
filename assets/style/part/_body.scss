@@ -2,6 +2,7 @@ main{
     @include container(column, flex-start, center);
     width: 100%;
     height: 90%;
+    background-color: $bg_color;
 }
 
 // BANNER
