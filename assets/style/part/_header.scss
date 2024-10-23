@@ -18,16 +18,13 @@ header{
         }
 
         .options{
-            width: 25%;
-            max-width: 250px;
+            width: 50%;
+            max-width: 400px;
             text-transform: capitalize;
 
             ul{
                 width: 100%;
                 @include container(row, space-between, center);
-            }
-            li{
-                width: 100%;
             }
         }
 

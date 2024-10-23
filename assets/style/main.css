@@ -66,8 +66,8 @@ header nav .logo img {
   max-width: 180px;
 }
 header nav .options {
-  width: 25%;
-  max-width: 250px;
+  width: 50%;
+  max-width: 400px;
   text-transform: capitalize;
 }
 header nav .options ul {
@@ -76,9 +76,6 @@ header nav .options ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-header nav .options li {
-  width: 100%;
 }
 header nav .btn-download {
   max-width: 100px;
