@@ -2,7 +2,13 @@ header{
     @include container(row, center, center);
     width: 100vw;
     height: 10vh;
+    min-height: 98px;
     background-color: $bg_color;
+
+    a{
+        color: $btn_font_color;
+        font-weight: 500;
+    }
 
     nav{
         @include container(row, center, center);
