@@ -1,6 +1,7 @@
 main{
     @include container(column, flex-start, center);
     width: 100%;
+    min-width: $min-wdth;
     height: 90%;
     background-color: $bg_color;
 }
@@ -9,6 +10,7 @@ main{
 section.banner{
     @include container(row, center, center);
     width: 100%;
+    min-width: $min-wdth;
     max-width: $max_width;
     height: 550px;
     padding-top: 150px;
@@ -58,8 +60,12 @@ section.banner{
                     transform: translateX(5px) rotateY(180deg);
                 }
 
-                100%{
+                50%{
                     transform: translateX(-2px) rotateY(180deg);
+                }
+
+                100%{
+                    transform: translateX(5px) rotateY(180deg);
                 }
             }
         }
@@ -79,6 +85,7 @@ section.banner{
 section.cards{
     @include container(column, center, center);
     width: 100vw;
+    min-width: $min-wdth;
     height: auto;
     padding-top: 50px;
 
@@ -86,6 +93,7 @@ section.cards{
         @include container(row, space-between, center);
         flex-wrap: wrap;
         width: 100%;
+        min-width: $min-wdth;
         max-width: $max_width;
         height: 100%;
 

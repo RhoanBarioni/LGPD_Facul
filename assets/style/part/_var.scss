@@ -1,6 +1,7 @@
 // MAIN
 $main_font: 'Poppins';
 $max_width: 1150px;
+$min-wdth: 1100px;
 $bg_color: #fff;
 
 @mixin container($direction,$justify, $align){

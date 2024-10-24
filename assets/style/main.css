@@ -58,7 +58,7 @@ body {
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4588235294));
 }
 .btn-pattern a:hover ion-icon {
-  animation: arrowAnimation 0.8s ease infinite;
+  animation: arrowAnimation 1.5s ease infinite;
 }
 .btn-pattern a:active {
   background-color: #1c3fb1;
@@ -70,6 +70,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  min-width: 1100px;
   height: 10vh;
   min-height: 98px;
   background-color: #fff;
@@ -84,6 +85,7 @@ header nav {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  min-width: 1100px;
   height: 100%;
   max-height: 98px;
   background-color: inherit;
@@ -158,6 +160,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  min-width: 1100px;
   height: 90%;
   background-color: #fff;
 }
@@ -168,6 +171,7 @@ section.banner {
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-width: 1100px;
   max-width: 1150px;
   height: 550px;
   padding-top: 150px;
@@ -221,8 +225,11 @@ section.banner .text-container .btn-pattern a:nth-of-type(2) {
   0% {
     transform: translateX(5px) rotateY(180deg);
   }
-  100% {
+  50% {
     transform: translateX(-2px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(5px) rotateY(180deg);
   }
 }
 section.banner .img-container {
@@ -240,6 +247,7 @@ section.cards {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  min-width: 1100px;
   height: auto;
   padding-top: 50px;
 }
@@ -250,6 +258,7 @@ section.cards .cards-container {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  min-width: 1100px;
   max-width: 1150px;
   height: 100%;
 }
