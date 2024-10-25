@@ -162,3 +162,115 @@ section.cards{
         }
     }
 }
+
+//SLIDER
+section.slider{
+    @include container(row, center, center);
+    width: 100vw;
+    height: 450px;
+    padding-top: 50px;
+
+    .slider-container{
+        @include container(row, center, center);
+        width: 100%;
+        min-width: calc($min-wdth - 100px);
+        max-width: calc($max_width - 100px);
+        height: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: red;
+
+        img{
+            max-width: 100%;
+        }
+        
+        .slider-img{
+            display: flex;
+            overflow: hidden;
+            // width: calc(100% / 2);
+            flex: 1;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            img {
+                width: 100%;
+                flex: 0 0 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .slider-img::after{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            top: 0;
+            right: 0;
+            border-radius: 30%;
+            z-index: 1;
+        }
+
+        .slider-text{
+            @include container(row, center, center);
+            // width: calc(100% / 2);
+            height: 100%;
+            flex: 1;
+            overflow: hidden;
+            padding: 50px;
+
+            div{
+                @include container(column, center, center);
+                height: 100%;
+                overflow: hidden;
+                text-align: center;
+
+                img{
+                    max-width: 250px;
+                    height: auto;
+                }
+
+                h4{
+                    width: 100%;
+                    height: auto;
+                    margin: 25px 0px;
+                    font-weight: 500;
+                    line-height: 30px;
+                    font-size: 1.3rem;
+                }
+
+                p{
+                    height: auto;
+                    color: $sub_p_color;
+                }
+            }
+
+            div:nth-of-type(2){
+                display: none;
+            }
+        }
+
+        .slider-button{
+            @include container(row, space-between, center);
+            position: absolute;
+            width: 100%;
+            max-width: calc($max_width - 50px);
+
+            button{
+                width: 60px;
+                height: 60px;
+                color: white;
+                border-radius: 50%;
+                border: 1px transparent;
+                background-color: $btn_bg_color;
+                font-size: 1.5rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+    }
+}
