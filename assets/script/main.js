@@ -1,3 +1,4 @@
+// HEADER
 function headerScrolled() {
     const nav = document.querySelector('nav');
     const sticky = nav.offsetTop;
@@ -11,3 +12,56 @@ function headerScrolled() {
     };
 }
 document.addEventListener('DOMContentLoaded', headerScrolled);
+
+
+
+// SLIDER
+function slider(){
+    const images = document.querySelectorAll('.slider-img .img');
+    const texts = document.querySelectorAll('.slider-text > div');
+    let currentIndex = 0;
+
+    // Função para atualizar o slider
+    function updateSlider() {
+        // Esconde todas as imagens e textos
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === currentIndex);
+            img.classList.toggle('none', i !== currentIndex);
+        });
+
+        texts.forEach((text, i) => {
+            text.classList.toggle('active', i === currentIndex);
+            text.classList.toggle('none', i !== currentIndex);
+        });
+    }
+
+    function auto(){
+        currentIndex = (currentIndex + 1) % images.length; // Avança para o próximo
+        updateSlider();
+    }
+
+    // Inicializa o slider
+    updateSlider();
+
+    // Adiciona eventos para os botões de navegação
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length; // Avança para o próximo
+        clearInterval(autoI);
+        updateSlider();
+        autoI = setInterval(auto, 3000);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Volta para o anterior
+        clearInterval(autoI);
+        updateSlider();
+        autoI = setInterval(auto, 3000);
+    });
+
+    let autoI = setInterval(auto, 3000);
+}
+document.addEventListener('DOMContentLoaded', slider);
+
+
+
+// FOOTER

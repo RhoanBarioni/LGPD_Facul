@@ -2,7 +2,7 @@ main{
     @include container(column, flex-start, center);
     width: 100%;
     min-width: $min-wdth;
-    height: 90%;
+    height: auto;
     background-color: $bg_color;
 }
 
@@ -55,6 +55,15 @@ section.banner{
                 margin-left: 15px;
             }
 
+            a:hover{
+                transform: translateY(-5px);
+                filter: $drop_shadow;
+        
+                ion-icon{
+                    animation: arrowAnimation 1.5s ease infinite; //keyframe in body.scss banner
+                }
+            }
+
             @keyframes arrowAnimation {
                 0%{
                     transform: translateX(5px) rotateY(180deg);
@@ -102,7 +111,7 @@ section.cards{
             width: calc(90% / 4);
             height: auto;
             min-height: 350px;
-            margin-top: 30px;
+            margin-top: 40px;
             padding: 10px;
             border: 2px solid $border_color;
             border-radius: 10px;
@@ -158,7 +167,7 @@ section.cards{
         .card:hover{
             transform: translateY(-15px);
             transition: 0.7s ease;
-            filter: drop-shadow(0px 0px 10px black);
+            filter: $drop_shadow;
         }
     }
 }
@@ -167,18 +176,18 @@ section.cards{
 section.slider{
     @include container(row, center, center);
     width: 100vw;
-    height: 450px;
-    padding-top: 50px;
+    height: 600px;
+    padding: 100px 0px;
 
     .slider-container{
         @include container(row, center, center);
         width: 100%;
         min-width: calc($min-wdth - 100px);
         max-width: calc($max_width - 100px);
-        height: 100%;
+        height: 95%;
         overflow: hidden;
         border-radius: 10px;
-        background-color: red;
+        transition: 0.5s ease;
 
         img{
             max-width: 100%;
@@ -189,44 +198,57 @@ section.slider{
             overflow: hidden;
             // width: calc(100% / 2);
             flex: 1;
-            background-color: black;
+            // background-color: black;
             width: 100%;
             height: 100%;
             position: relative;
 
-            img {
+            .second-border{
                 width: 100%;
-                flex: 0 0 100%;
                 height: 100%;
-                object-fit: cover;
+                
+                .img{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    min-width: 100%;
+                    height: 100%;
+                    // background-image: url('/assets/img/6538623.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    // border-radius: 0px 100px 150px 0px;
+                    transition: 0.8s ease;
+                }
+    
+                img {
+                    width: 100%;
+                    flex: 0 0 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: inherit;
+                }
             }
         }
 
-        .slider-img::after{
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: green;
-            top: 0;
-            right: 0;
-            border-radius: 30%;
-            z-index: 1;
-        }
-
         .slider-text{
-            @include container(row, center, center);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             // width: calc(100% / 2);
+            width: 100%;
             height: 100%;
             flex: 1;
             overflow: hidden;
-            padding: 50px;
+            padding: 10px;
 
             div{
                 @include container(column, center, center);
+                min-width: 100%;
                 height: 100%;
-                overflow: hidden;
                 text-align: center;
 
                 img{
@@ -235,23 +257,26 @@ section.slider{
                 }
 
                 h4{
-                    width: 100%;
+                    width: 85%;
                     height: auto;
                     margin: 25px 0px;
-                    font-weight: 500;
+                    font-weight: 400;
                     line-height: 30px;
                     font-size: 1.3rem;
+                    color: #4b4b4b;
                 }
 
                 p{
                     height: auto;
                     color: $sub_p_color;
+                    text-transform: uppercase;
+                    font-weight: 500;
                 }
             }
 
-            div:nth-of-type(2){
-                display: none;
-            }
+            // div:nth-of-type(2){
+            //     display: none;
+            // }
         }
 
         .slider-button{
@@ -261,6 +286,9 @@ section.slider{
             max-width: calc($max_width - 50px);
 
             button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 60px;
                 height: 60px;
                 color: white;
@@ -270,7 +298,53 @@ section.slider{
                 font-size: 1.5rem;
                 font-weight: 500;
                 cursor: pointer;
+
+                span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            button:hover{
+                background-color: $bg_active;
+            }
+
+            button:active{
+                background-color: $btn_bg_color;
+            }
+
+            span:hover{
+                animation: arrowAnimationSlider 1.5s ease infinite;
+            }
+
+            @keyframes arrowAnimationSlider {
+                0%{
+                    transform: translateX(2px);
+                }
+
+                50%{
+                    transform: translateX(-5px);
+                }
+
+                100%{
+                    transform: translateX(2px);
+                }
             }
         }
     }
+}
+
+.active{
+    display: flex !important;
+    opacity: 1;
+    transition: 0.8s ease;
+}
+
+.none{
+    display: none !important;
+    opacity: 0;
+    transition: 0.8s ease;
 }

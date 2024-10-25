@@ -50,7 +50,12 @@ header{
     
             .btn-download{
                 max-width: 100px;
-            }
+
+                a:hover{
+                    transform: translateY(-5px);
+                    filter: $drop_shadow;
+                }
+            } 
         }
     }
 }

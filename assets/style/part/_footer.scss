@@ -1,0 +1,79 @@
+footer{
+    @include container(column, center, center);
+    width: 100vw;
+    height: 20vh;
+    background-color: red;
+
+    .container{
+        @include container(row, space-between, center);
+        width: 100%;
+        min-width: 800px;
+        max-width: calc($max_width - 300px);
+        height: 85%;
+        text-align: center;
+
+        a{
+            @include container(column, center, center);
+        }
+
+        img{
+            max-width: 40px;
+            border-radius: 50px;
+        }
+    }
+
+    .copy{
+        @include container(column, center, flex-start);
+        flex: 1;
+    }
+
+    .made{
+        @include container(column, center, center);
+        height: 100%;
+        flex: 1;
+
+        .dev{
+            @include container(row, space-around, center);
+            width: 100%;
+            height: 100%;
+
+            .name{
+                a{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    transition: transform 0.8s ease;
+
+                    img{
+                        transition: transform 0.8s ease;
+                    }
+                }
+
+                p{
+                    text-transform: capitalize;
+                    margin-left: 6px;
+                    transition: transform 0.8s ease;
+                    transition-delay: 0.35s;
+                }
+            }
+
+            .name:hover{
+                a img{
+                    transform: translateY(-5px);
+                }
+
+                a p{
+                    transform: translateY(-5px);
+                }
+            }
+
+            a{
+                transition: transform 0.8s ease;
+            }
+
+            a:hover{
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
