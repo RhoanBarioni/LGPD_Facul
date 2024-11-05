@@ -14,6 +14,8 @@ section.banner{
     max-width: $max_width;
     height: 550px;
     padding-top: 150px;
+    margin-bottom: 50px;
+    overflow: hidden;
 
     .text-container{
         @include container(column, flex-start, flex-start);
@@ -23,6 +25,7 @@ section.banner{
             font-size: 2.5em;
             font-weight: 400;
             line-height: 50px;
+            color: $font_color;
 
             span{
                 color: $btn_font_color;
@@ -33,6 +36,7 @@ section.banner{
             margin-top: 20px;
             line-height: 30px;
             font-size: 1.1em;
+            color: $font_color;
         }
 
         .btn-pattern{
@@ -96,22 +100,23 @@ section.cards{
     width: 100vw;
     min-width: $min-wdth;
     height: auto;
-    padding-top: 50px;
+    overflow: hidden;
 
     .cards-container{
-        @include container(row, space-between, center);
+        @include container(row, center, center);
         flex-wrap: wrap;
         width: 100%;
         min-width: $min-wdth;
         max-width: $max_width;
         height: 100%;
+        overflow: hidden;
 
         .card{
             @include container(column, center, center);
-            width: calc(90% / 4);
+            width: $amount_width;
             height: auto;
             min-height: 350px;
-            margin-top: 40px;
+            margin: 40px 20px;
             padding: 10px;
             border: 2px solid $border_color;
             border-radius: 10px;
@@ -128,11 +133,13 @@ section.cards{
                 @include container(column, center, center);
                 text-align: center;
                 pointer-events: none;
+                padding-bottom: 15px;
 
                 h3{
                     width: 95%;
                     font-weight: 500;
                     margin: 15px 0px;
+                    color: $font_color;
                 }
 
                 P{
@@ -140,26 +147,49 @@ section.cards{
                     height: auto;
                     min-height: 150px;
                     text-align: justify;
+                    color: $font_color;
+                }
+            }
+
+            a{
+                display: none;
+                position: absolute;
+                width: 100px;
+                padding: 5px;
+                // margin: 10px 0px;
+                border: 2px solid $bg_color_border;
+                border-radius: 10px;
+                color: inherit;
+                font-weight: 500;
+                text-transform: capitalize;
+                pointer-events: all;
+                // z-index: 1;
+                text-align: center;
+                background-color: white;
+                transition: 0.7s ease;
+                animation: btnLeave 0.5s ease;
+                bottom: -50px;
+                color: $font_color;
+            }
+    
+            a:hover{
+                background-color: $bg_color_border;
+                color: white;
+                transform: scale(1.1);
+                transition: 0.7s ease;
+            }
+
+            @keyframes btnLeave {
+                0%{
+                    display: block;
+                    bottom: -20px;
+                    opacity: 1;
                 }
 
-                a{
-                    width: 100px;
-                    padding: 5px;
-                    margin: 10px 0px;
-                    border: 2px solid $bg_color_border;
-                    border-radius: 10px;
-                    color: inherit;
-                    font-weight: 500;
-                    text-transform: capitalize;
-                    transition: 0.7s ease;
-                    pointer-events: all;
-                }
-
-                a:hover{
-                    background-color: $bg_color_border;
-                    color: white;
-                    transform: scale(1.1);
-                    transition: 0.7s ease;
+                100%{
+                    display: block;
+                    bottom: -40px;
+                    opacity: 0;
                 }
             }
         }
@@ -168,6 +198,28 @@ section.cards{
             transform: translateY(-15px);
             transition: 0.7s ease;
             filter: $drop_shadow;
+
+            a{
+                display: block;
+                position: absolute;
+                bottom: -20px;
+                // z-index: 1;
+                animation: btnRead 0.8s linear;
+            }
+
+            @keyframes btnRead {
+                0%{
+                    display: block;
+                    bottom: -40px;
+                    opacity: 0;
+                }
+
+                100%{
+                    display: block;
+                    bottom: -20px;
+                    opacity: 1;
+                }
+            }
         }
     }
 }
@@ -191,6 +243,7 @@ section.slider{
 
         img{
             max-width: 100%;
+            pointer-events: none;
         }
         
         .slider-img{

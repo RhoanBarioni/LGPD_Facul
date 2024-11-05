@@ -65,3 +65,20 @@ document.addEventListener('DOMContentLoaded', slider);
 
 
 // FOOTER
+function copyright(){
+    const data = new Date;
+    const year = data.getFullYear();
+
+    function updateFooter(year){
+        const spanS = document.querySelector('footer #year');
+        const span = parseInt(spanS.textContent);
+
+        if(span !== year){
+            spanS.innerText = `2024 - ${year}`;
+        }
+    }
+
+    updateFooter(year);
+}
+
+document.addEventListener('DOMContentLoaded', copyright);

@@ -3,6 +3,7 @@ $main_font: 'Poppins';
 $max_width: 1150px;
 $min-wdth: 1100px;
 $bg_color: #fff;
+$font_color: black;
 
 @mixin container($direction,$justify, $align){
     display: flex;
@@ -25,7 +26,13 @@ $bg_color_banner: #f7f7f7;
 $bg_color_border: blue;
 $border_color: #000;
 
+// CARD
+$amount_width: calc(85% / 3);
+
 // SLIDER
 $sub_p_color: #383838a4;
 
 // FOOTER
+$font_color_footer: #8d8d8d75;
+// MADE
+$bg_color_after: #2b50c7;

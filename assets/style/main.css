@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #000000;
+  background: inherit;
   border-radius: 1px;
 }
 
@@ -175,6 +175,8 @@ section.banner {
   max-width: 1150px;
   height: 550px;
   padding-top: 150px;
+  margin-bottom: 50px;
+  overflow: hidden;
 }
 section.banner .text-container {
   display: flex;
@@ -187,6 +189,7 @@ section.banner .text-container h1 {
   font-size: 2.5em;
   font-weight: 400;
   line-height: 50px;
+  color: black;
 }
 section.banner .text-container h1 span {
   color: #2b50c7;
@@ -195,6 +198,7 @@ section.banner .text-container p {
   margin-top: 20px;
   line-height: 30px;
   font-size: 1.1em;
+  color: black;
 }
 section.banner .text-container .btn-pattern {
   display: flex;
@@ -256,28 +260,29 @@ section.cards {
   width: 100vw;
   min-width: 1100px;
   height: auto;
-  padding-top: 50px;
+  overflow: hidden;
 }
 section.cards .cards-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
   min-width: 1100px;
   max-width: 1150px;
   height: 100%;
+  overflow: hidden;
 }
 section.cards .cards-container .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 22.5%;
+  width: 28.3333333333%;
   height: auto;
   min-height: 350px;
-  margin-top: 40px;
+  margin: 40px 20px;
   padding: 10px;
   border: 2px solid #000;
   border-radius: 10px;
@@ -296,40 +301,79 @@ section.cards .cards-container .card .text {
   align-items: center;
   text-align: center;
   pointer-events: none;
+  padding-bottom: 15px;
 }
 section.cards .cards-container .card .text h3 {
   width: 95%;
   font-weight: 500;
   margin: 15px 0px;
+  color: black;
 }
 section.cards .cards-container .card .text P {
   width: 95%;
   height: auto;
   min-height: 150px;
   text-align: justify;
+  color: black;
 }
-section.cards .cards-container .card .text a {
+section.cards .cards-container .card a {
+  display: none;
+  position: absolute;
   width: 100px;
   padding: 5px;
-  margin: 10px 0px;
   border: 2px solid blue;
   border-radius: 10px;
   color: inherit;
   font-weight: 500;
   text-transform: capitalize;
-  transition: 0.7s ease;
   pointer-events: all;
+  text-align: center;
+  background-color: white;
+  transition: 0.7s ease;
+  animation: btnLeave 0.5s ease;
+  bottom: -50px;
+  color: black;
 }
-section.cards .cards-container .card .text a:hover {
+section.cards .cards-container .card a:hover {
   background-color: blue;
   color: white;
   transform: scale(1.1);
   transition: 0.7s ease;
 }
+@keyframes btnLeave {
+  0% {
+    display: block;
+    bottom: -20px;
+    opacity: 1;
+  }
+  100% {
+    display: block;
+    bottom: -40px;
+    opacity: 0;
+  }
+}
 section.cards .cards-container .card:hover {
   transform: translateY(-15px);
   transition: 0.7s ease;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.6039215686));
+}
+section.cards .cards-container .card:hover a {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  animation: btnRead 0.8s linear;
+}
+@keyframes btnRead {
+  0% {
+    display: block;
+    bottom: -40px;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    bottom: -20px;
+    opacity: 1;
+  }
 }
 
 section.slider {
@@ -356,6 +400,7 @@ section.slider .slider-container {
 }
 section.slider .slider-container img {
   max-width: 100%;
+  pointer-events: none;
 }
 section.slider .slider-container .slider-img {
   display: flex;
@@ -498,8 +543,9 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 20vh;
-  background-color: red;
+  min-width: 1100px;
+  height: 15vh;
+  background-color: #181818;
 }
 footer .container {
   display: flex;
@@ -508,7 +554,7 @@ footer .container {
   align-items: center;
   width: 100%;
   min-width: 800px;
-  max-width: 850px;
+  max-width: 950px;
   height: 85%;
   text-align: center;
 }
@@ -518,57 +564,115 @@ footer .container a {
   justify-content: center;
   align-items: center;
 }
-footer .container img {
-  max-width: 40px;
-  border-radius: 50px;
-}
 footer .copy {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.8rem;
   flex: 1;
+  color: black;
+}
+footer .copy a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgba(141, 141, 141, 0.4588235294);
+}
+footer .copy a span {
+  margin: 0px 5px;
 }
 footer .made {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex: 1;
-}
-footer .made .dev {
-  display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100%;
+  flex: 1;
 }
-footer .made .dev .name a {
+footer .made .container-social {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  transition: transform 0.8s ease;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.5s ease;
+  padding: 5px;
+  opacity: 0.35;
+  border-radius: 10px;
 }
-footer .made .dev .name a img {
-  transition: transform 0.8s ease;
+footer .made .container-social span {
+  margin: 0;
+  font-weight: 500;
+  color: white;
+  font-size: 1rem;
+  z-index: 1;
 }
-footer .made .dev .name p {
-  text-transform: capitalize;
-  margin-left: 6px;
-  transition: transform 0.8s ease;
-  transition-delay: 0.35s;
+footer .made .container-social .social-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: white;
 }
-footer .made .dev .name:hover a img {
-  transform: translateY(-5px);
+footer .made .container-social .social-link a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: black;
 }
-footer .made .dev .name:hover a p {
-  transform: translateY(-5px);
+footer .made .container-social .social-link a #icon {
+  width: 100%;
+  height: 55%;
+  margin: 0;
 }
-footer .made .dev a {
-  transition: transform 0.8s ease;
+footer .made .container-social .social-link a:hover {
+  transition: 0.5s ease;
+  transform: scale(1.3);
 }
-footer .made .dev a:hover {
-  transform: translateY(-5px);
+footer .made :first-child {
+  margin-right: 30px;
+}
+footer .made .container-social::after, footer .made .container-social::before {
+  position: absolute;
+  content: "";
+  background-color: #2b50c7;
+  width: 50%;
+  height: 100%;
+  transition: 0.5s ease;
+}
+footer .made .container-social::after {
+  left: 0;
+}
+footer .made .container-social::before {
+  right: 0;
+  z-index: 1;
+}
+footer .made .container-social:hover {
+  transition: 0.5s ease;
+  opacity: 1;
+  filter: drop-shadow(0px 0px 20px #2b50c7);
+}
+footer .made .container-social:hover span {
+  transition: 0.8s ease;
+  display: none;
+}
+footer .made .container-social:hover::after {
+  transform: translateY(-100%);
+}
+footer .made .container-social:hover::before {
+  transform: translateY(100%);
 }/*# sourceMappingURL=main.css.map */
