@@ -302,6 +302,7 @@ section.cards .cards-container .card .text {
   text-align: center;
   pointer-events: none;
   padding-bottom: 15px;
+  min-height: 390px;
 }
 section.cards .cards-container .card .text h3 {
   width: 95%;
@@ -359,7 +360,7 @@ section.cards .cards-container .card:hover a {
   display: block;
   position: absolute;
   bottom: -20px;
-  animation: btnRead 0.8s linear;
+  animation: btnRead 0.4s linear;
 }
 @keyframes btnRead {
   0% {
@@ -466,11 +467,14 @@ section.slider .slider-container .slider-text div h4 {
   font-size: 1.3rem;
   color: #4b4b4b;
 }
-section.slider .slider-container .slider-text div p {
+section.slider .slider-container .slider-text div a {
   height: auto;
   color: rgba(56, 56, 56, 0.6431372549);
   text-transform: uppercase;
   font-weight: 500;
+}
+section.slider .slider-container .slider-text div a:hover {
+  color: #2b50c7;
 }
 section.slider .slider-container .slider-button {
   display: flex;
