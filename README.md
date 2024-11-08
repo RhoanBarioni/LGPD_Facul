@@ -24,6 +24,8 @@ de uma maneira que seja compreensível para pessoas mais <strong><em>Leigas</em>
 ### Contribuidores:
 <a href='https://github.com/RhoanBarioni' target='_blank' title='Rhoan'><img src="https://github.com/user-attachments/assets/aacf5479-484d-41c8-98ae-ba58db475cda" width="100"/></a>
 
+<a href='https://github.com/LucasBXavier' target='_blank' title='Lucas'><img src="https://avatars.githubusercontent.com/u/90784883?v=4" width="100"/></a>
+
 <br>
 
 [LGPD Manual](LINK)
