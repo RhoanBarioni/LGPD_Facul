@@ -2,7 +2,7 @@ footer{
     @include container(column, center, center);
     width: 100vw;
     min-width: $min-wdth;
-    height: 15vh;
+    height: 10vh;
     background-color: #181818;
 
     .container{
@@ -19,13 +19,13 @@ footer{
     }
 
     .copy{
-        @include container(row, flex-start, center);
+        @include container(row, center, center);
         font-size: 0.8rem;
         flex: 1;
         color: $font_color;
 
         a{
-            @include container(row, flex-start, center);
+            @include container(row, center, center);
             color: $font_color_footer;
 
             span{

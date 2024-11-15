@@ -284,9 +284,9 @@ section.cards .cards-container .card {
   min-height: 350px;
   margin: 40px 20px;
   padding: 10px;
-  border: 2px solid #000;
+  border: 1px solid blue;
   border-radius: 10px;
-  border-bottom: 6px solid #000;
+  border-bottom: 6px solid blue;
   background-color: #f7f7f7;
   transition: 0.7s ease;
 }
@@ -302,6 +302,7 @@ section.cards .cards-container .card .text {
   text-align: center;
   pointer-events: none;
   padding-bottom: 15px;
+  min-height: 390px;
 }
 section.cards .cards-container .card .text h3 {
   width: 95%;
@@ -335,8 +336,6 @@ section.cards .cards-container .card a {
   color: black;
 }
 section.cards .cards-container .card a:hover {
-  background-color: blue;
-  color: white;
   transform: scale(1.1);
   transition: 0.7s ease;
 }
@@ -361,7 +360,7 @@ section.cards .cards-container .card:hover a {
   display: block;
   position: absolute;
   bottom: -20px;
-  animation: btnRead 0.8s linear;
+  animation: btnRead 0.4s linear;
 }
 @keyframes btnRead {
   0% {
@@ -468,11 +467,14 @@ section.slider .slider-container .slider-text div h4 {
   font-size: 1.3rem;
   color: #4b4b4b;
 }
-section.slider .slider-container .slider-text div p {
+section.slider .slider-container .slider-text div a {
   height: auto;
   color: rgba(56, 56, 56, 0.6431372549);
   text-transform: uppercase;
   font-weight: 500;
+}
+section.slider .slider-container .slider-text div a:hover {
+  color: #2b50c7;
 }
 section.slider .slider-container .slider-button {
   display: flex;
@@ -544,7 +546,7 @@ footer {
   align-items: center;
   width: 100vw;
   min-width: 1100px;
-  height: 15vh;
+  height: 10vh;
   background-color: #181818;
 }
 footer .container {
@@ -567,7 +569,7 @@ footer .container a {
 footer .copy {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-size: 0.8rem;
   flex: 1;
@@ -576,7 +578,7 @@ footer .copy {
 footer .copy a {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   color: rgba(141, 141, 141, 0.4588235294);
 }

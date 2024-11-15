@@ -55,10 +55,10 @@ function slider(){
         currentIndex = (currentIndex - 1 + images.length) % images.length; // Volta para o anterior
         clearInterval(autoI);
         updateSlider();
-        autoI = setInterval(auto, 3000);
+        autoI = setInterval(auto, 4000);
     });
 
-    let autoI = setInterval(auto, 3000);
+    let autoI = setInterval(auto, 4000);
 }
 document.addEventListener('DOMContentLoaded', slider);
 
